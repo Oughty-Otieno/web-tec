@@ -1,0 +1,33 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.margin {
+  margin-right: 840px;
+  background-color: #1111;
+}
+
+.card-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.director_message{
+height: 200px !important;
+width: 1340px;
+}
+
+.dir{
+  height: 213.3px;
+  width: 142.2px;
+}
+
+.navbar-aspects {
+  background-color: #1111;
+}
