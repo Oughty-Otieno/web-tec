@@ -55,10 +55,14 @@
                       <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">How to appy</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="#" class="btn btn-primary">Apply Now</a>
-                        </div>
+                          <p class="card-text">We are receiving applications. Click the link below and fill in the form. We will contact you via the email adress you provide.</p>
+                          @auth
+                            <a href="{{ route('applications.index')}}" class="btn btn-primary">View Applications</a>
+                          @else
+                            <a href="{{ route('applications.create') }}" class="btn btn-primary">Apply Now</a>
+                          @endauth
                       </div>
+                    </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="card">

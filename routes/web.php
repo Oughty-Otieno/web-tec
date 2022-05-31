@@ -17,9 +17,9 @@ Route::get('/', function () {
     return redirect()->route('home.index');
 });
 //
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return redirect()->route('home.index');
+});
 
 Route::resource('/home', 'App\Http\Controllers\DashboardController');
 Route::resource('d_message', 'App\Http\Controllers\DirectorMessageController');
@@ -29,5 +29,6 @@ Route::resource('academics', 'App\Http\Controllers\AcademicController');
 Route::resource('departments', 'App\Http\Controllers\DepartmentController');
 Route::resource('staffs', 'App\Http\Controllers\StaffController');
 Route::resource('about_us', 'App\Http\Controllers\AboutController');
+Route::resource('applications', 'App\Http\Controllers\ApplicationController');
 
 require __DIR__.'/auth.php';

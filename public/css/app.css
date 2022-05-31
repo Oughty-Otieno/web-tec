@@ -11286,11 +11286,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.margin {
-  margin-right: 840px;
-  background-color: rgba(17, 17, 17, 0.0666666667);
-}
-
 .card-margin {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -11306,6 +11301,33 @@ textarea.form-control-lg {
   width: 142.2px;
 }
 
-.navbar-aspects {
-  background-color: rgba(17, 17, 17, 0.0666666667);
+.bg-nnav-green {
+  background-color: #006600;
+}
+
+.bg-footer-green {
+  background-color: #4d4d4d;
+}
+
+.text-color {
+  color: #ffffff;
+}
+
+.bg-sm {
+  background-color: #ffffff;
+}
+
+.card-position-login {
+  margin-top: 120px;
+}
+
+.login-input {
+  border-color: #330033;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
 }

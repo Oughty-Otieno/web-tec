@@ -11,10 +11,11 @@
             <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
         </div>
 
+        @auth
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('programs.create') }}">Create a new Programme</a>
         </div>
-
+        @endauth
 
     </div>
 </div>
@@ -30,17 +31,20 @@
    <th>No</th>
    <th>Course Title</th>
    <th>Requirements</th>
+   @auth
    <th width="280px">Action</th>
+   @endauth
  </tr>
  @foreach ($data_postgraduate as $key => $program)
   <tr>
     <td>{{ ++$i }}</td>
     <td>{{ $program->name }}</td>
     <td>{{ $program->requirements}}</td>
+    @auth
     <td>
        <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
-
+    @endauth
     </td>
   </tr>
  @endforeach
@@ -52,17 +56,20 @@
    <th>No</th>
    <th>Course Title</th>
    <th>Requirements</th>
+   @auth
    <th width="280px">Action</th>
+   @endauth
  </tr>
  @foreach ($data_undergraduate as $key => $program)
   <tr>
     <td>{{ ++$i }}</td>
     <td>{{ $program->name }}</td>
     <td>{{ $program->requirements}}</td>
+    @auth
     <td>
        <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
-
+    @endauth
     </td>
   </tr>
  @endforeach
@@ -74,18 +81,21 @@
    <th>No</th>
    <th>Course Title</th>
    <th>Requirements</th>
+   @auth
    <th width="280px">Action</th>
+   @endauth
  </tr>
  @foreach ($data_diploma as $key => $program)
   <tr>
     <td>{{ ++$i }}</td>
     <td>{{ $program->name }}</td>
     <td>{{ $program->requirements}}</td>
+    @auth
     <td>
        <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
-
     </td>
+    @endauth
   </tr>
  @endforeach
 </table>

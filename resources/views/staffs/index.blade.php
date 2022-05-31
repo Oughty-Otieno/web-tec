@@ -11,9 +11,11 @@
             <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
         </div>
 
+        @auth
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('staffs.create') }}">Create a Staff member</a>
         </div>
+        @endauth
 
 
     </div>
