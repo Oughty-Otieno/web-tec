@@ -8,7 +8,7 @@
             <h2>Users Management</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+            <a class="btn btn-margin btn-success" href="{{ route('users.create') }}"> Create New User</a>
         </div>
     </div>
 </div>
@@ -35,13 +35,11 @@
     <td>{{ $user->email }}</td>
     <td>
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-
-
+       <a class="btn btn-margin btn-success" href="{{ route('users.edit',$user->id) }}">Edit</a>
             <form action="{{ route('users.destroy', $user->id) }}" type="submit" method='post' >
                   @csrf
                   @method('delete')
-                <button  type="submit" class="btn btn-danger ">Delete</button>
+                <button  type="submit" class="btn btn-margin btn-danger ">Delete</button>
               </form>
 
     </td>

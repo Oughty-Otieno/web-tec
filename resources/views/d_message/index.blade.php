@@ -12,7 +12,7 @@
         </div>
 
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('d_message.create') }}">Create a new message</a>
+            <a class="btn btn-margin btn-success" href="{{ route('d_message.create') }}">Create a new message</a>
         </div>
 
 
@@ -39,7 +39,7 @@
     <td>{{ $message->created_at}}</td>
     <td>
        <a class="btn btn-info" href="{{ route('d_message.show',$message) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('d_message.edit',$message) }}">Edit</a>
+       <a class="btn btn-success" href="{{ route('d_message.edit',$message) }}">Edit</a>
 
     </td>
   </tr>

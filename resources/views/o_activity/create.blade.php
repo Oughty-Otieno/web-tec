@@ -31,7 +31,7 @@
                <label>Activity</label>
                <textarea class="form-control @error('name') is-invalid @enderror" name="activity" id="activity"> </textarea>
            </div>
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

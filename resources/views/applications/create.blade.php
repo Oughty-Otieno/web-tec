@@ -52,7 +52,7 @@
                <input type="text" class="form-control @error('course') is-invalid @enderror" name="course" id="activity"> </input>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

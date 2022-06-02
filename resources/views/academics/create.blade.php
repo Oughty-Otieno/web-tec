@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Create Programme</h2>
+            <h2>Create an Academic Activity</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
@@ -52,7 +52,7 @@
                <input type="text" class="form-control @error('dates') is-invalid @enderror" name="dates"> </input>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

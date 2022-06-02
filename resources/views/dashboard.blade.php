@@ -26,7 +26,7 @@
                    </div>
                   </div>
                   @auth
-                      <a href="{{ route('d_message.index') }}" class="btn btn-primary">View all messages</a>
+                      <a href="{{ route('d_message.index') }}" class="btn btn-success">View all messages</a>
                   @endauth
                     </div>
                   </div>
@@ -45,7 +45,7 @@
                         </ol>
                         </p>
                         @auth
-                        <a href="{{ route('o_activity.index') }}" class="btn btn-primary">View all activities</a>
+                        <a href="{{ route('o_activity.index') }}" class="btn btn-success">View all activities</a>
                         @endauth
                     </div>
                   </div>
@@ -57,9 +57,9 @@
                           <h5 class="card-title">How to appy</h5>
                           <p class="card-text">We are receiving applications. Click the link below and fill in the form. We will contact you via the email adress you provide.</p>
                           @auth
-                            <a href="{{ route('applications.index')}}" class="btn btn-primary">View Applications</a>
+                            <a href="{{ route('applications.index')}}" class="btn btn-success">View Applications</a>
                           @else
-                            <a href="{{ route('applications.create') }}" class="btn btn-primary">Apply Now</a>
+                            <a href="{{ route('applications.create') }}" class="btn btn-success">Apply Now</a>
                           @endauth
                       </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Payment Methods</h5>
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="{{ route('payments.index') }}" class="btn btn-primary">Payment Methods</a>
+                          <a href="{{ route('payments.index') }}" class="btn btn-success">Payment Methods</a>
                         </div>
                       </div>
                     </div>

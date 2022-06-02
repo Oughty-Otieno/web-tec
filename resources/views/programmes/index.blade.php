@@ -5,15 +5,15 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Activities</h2>
+            <h2>Programmes</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
+            <a class="btn btn-primary btn-margin" href="{{ url('/home') }}"> Back</a>
         </div>
 
         @auth
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('programs.create') }}">Create a new Programme</a>
+            <a class="btn btn-margin btn-success" href="{{ route('programs.create') }}">Create new Programme</a>
         </div>
         @endauth
 
@@ -42,7 +42,7 @@
     <td>{{ $program->requirements}}</td>
     @auth
     <td>
-       <a class="btn btn-primary" href="{{ route('programs.edit',$program->id) }}">Edit</a>
+       <a class="btn btn-margin btn-success" href="{{ route('programs.edit',$program->id) }}">Edit</a>
 
        <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
              @csrf
@@ -72,8 +72,7 @@
     <td>{{ $program->requirements}}</td>
     @auth
     <td>
-       <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
+       <a class="btn btn-margin btn-success" href="{{ route('programs.edit',$program) }}">Edit</a>
 
        <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
              @csrf
@@ -103,8 +102,7 @@
     <td>{{ $program->requirements}}</td>
     @auth
     <td>
-       <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
+       <a class="btn btn-margin btn-success" href="{{ route('programs.edit',$program) }}">Edit</a>
 
        <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
              @csrf

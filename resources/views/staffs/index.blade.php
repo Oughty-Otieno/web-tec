@@ -13,7 +13,7 @@
 
         @auth
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('staffs.create') }}">Create a Staff member</a>
+            <a class="btn btn-margin btn-success" href="{{ route('staffs.create') }}">Create a Staff member</a>
         </div>
         @endauth
 
@@ -47,12 +47,14 @@
             <p class="card-text">
               {{$staff->title}}
             </p>
-            <a class="btn btn-primary" href="{{ route('staffs.edit',$staff->id) }}">Edit</a>
+            @auth
+            <a class="btn btn-margin btn-success" href="{{ route('staffs.edit',$staff->id) }}">Edit</a>
             <form action="{{ route('staffs.destroy', $staff->id) }}" type="submit" method='post' >
                   @csrf
                   @method('delete')
                 <button  type="submit" class="btn btn-danger ">Delete</button>
               </form>
+              @endauth
           </div>
         </div>
       </div>

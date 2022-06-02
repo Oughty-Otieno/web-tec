@@ -28,9 +28,11 @@
             <a class="nav-link" href="{{ route('staffs.index') }}">Staff</a>
         </li>
 
+        @auth
         <li class="nav-item">
             <a class="nav-link" href="{{ route('users.index') }}">Users</a>
         </li>
+        @endauth
 
       </ul>
 

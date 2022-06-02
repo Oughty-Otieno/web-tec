@@ -11331,3 +11331,8 @@ textarea.form-control-lg {
   height: 50px;
   width: 50px;
 }
+
+.btn-margin {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}

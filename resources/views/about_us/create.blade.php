@@ -8,7 +8,7 @@
             <h2>Create Programme</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
+            <a class="btn btn-margin btn-primary" href="{{ url('/home') }}"> Back</a>
         </div>
     </div>
 </div>

@@ -53,7 +53,7 @@
                <input type="text" class="form-control @error('dates') is-invalid @enderror" name="dates" value = "{{$academic->dates}}"> </input>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Activities</h2>
+            <h2>Departments</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
@@ -13,7 +13,7 @@
 
         @auth
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('departments.create') }}">Create a Department</a>
+            <a class="btn btn-margin btn-success" href="{{ route('departments.create') }}">Create a Department</a>
         </div>
         @endauth
 
@@ -35,14 +35,15 @@
     <p class="card-text">
       {{$department->description}}
       </p>
-
-      <a class="btn btn-primary" href="{{ route('departments.edit',$department->id) }}">Edit</a>
+      @auth
+      <a class="btn btn-margin btn-success" href="{{ route('departments.edit',$department->id) }}">Edit</a>
 
       <form action="{{ route('departments.destroy', $department->id) }}" type="submit" method='post' >
             @csrf
             @method('delete')
           <button  type="submit" class="btn btn-danger ">Delete</button>
         </form>
+      @endauth
   </div>
 </div>
 @endforeach

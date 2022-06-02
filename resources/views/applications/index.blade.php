@@ -4,10 +4,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Activities</h2>
+            <h2>Applications</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
+            <a class="btn btn-margin btn-primary" href="{{ url('/home') }}"> Back</a>
         </div>
     </div>
 </div>

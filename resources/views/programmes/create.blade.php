@@ -5,10 +5,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Create Programme</h2>
+            <h2>Create a Programme</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
+            <a class="btn btn-margin btn-primary" href="{{ url('/home') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -47,7 +47,7 @@
                <textarea class="form-control @error('name') is-invalid @enderror" name="requirements"> </textarea>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

@@ -38,7 +38,7 @@
                <textarea class="form-control @error('description') is-invalid @enderror" name="description">{{$department->description}}</textarea>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Edit Programme</h2>
+            <h2>Edit Our Values</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ url('/home') }}"> Back</a>
@@ -37,7 +37,7 @@
                <label>Mission</label>
                <textarea class="form-control @error('description') is-invalid @enderror" name="mission">{{$about->mission}}</textarea>
            </div>
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

@@ -30,7 +30,10 @@ Route::resource('departments', 'App\Http\Controllers\DepartmentController');
 Route::resource('staffs', 'App\Http\Controllers\StaffController');
 Route::resource('about_us', 'App\Http\Controllers\AboutController');
 Route::resource('applications', 'App\Http\Controllers\ApplicationController');
-Route::resource('users', 'App\Http\Controllers\UserController');
 Route::resource('payments', 'App\Http\Controllers\PaymentMethodController');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('users', 'App\Http\Controllers\UserController');
+  });
 
 require __DIR__.'/auth.php';

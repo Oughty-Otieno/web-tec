@@ -18,6 +18,8 @@
               <form method="POST" action="{{ route('login') }}">
                   {{ csrf_field() }}
                   <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <p>username: admin@jkuat.com <br>
+                      password: admin@123</p>
                       <div class="col-md-12">
                           <input id="email" placeholder="email" type="email" class="form-control login-input" name="email" value="{{ old('email') }}" required autofocus>
                           @if ($errors->has('email'))
@@ -45,24 +47,11 @@
                   </div>
 
                   <div class="form-group row">
-                      <div class="col-md-8 ml-auto">
-                          <div class="form-check">
-                                  <input class="form-check-input ds-poll-links" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="form-group row">
                       <div class="col-md-12 ml-auto">
-                          <button type="submit" class="btn btn-login col-md-12 ml-auto">
+                          <button type="submit" class="btn  btn-margin btn-success col-md-12 ml-auto">
                               Login
                           </button>
                       </div>
-                  <div class="col-md-12 ml-auto">
-                          <a class="btn btn-link col-md-12 ml-auto ds-poll-links" href="{{ route('password.request') }}">
-                              Lost Password?
-                          </a>
-                  </div>
               </form>
           </div>
       </div>

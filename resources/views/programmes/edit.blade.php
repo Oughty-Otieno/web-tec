@@ -48,7 +48,7 @@
                <textarea class="form-control @error('name') is-invalid @enderror" name="requirements">{{$program->requirements}}</textarea>
            </div>
 
-             <input type="submit" class="btn btn-primary">
+             <input type="submit" class="btn btn-success">
 
        </form>
 

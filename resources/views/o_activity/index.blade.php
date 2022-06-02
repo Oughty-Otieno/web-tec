@@ -13,7 +13,7 @@
 
         @auth
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('o_activity.create') }}">Create a new Activity</a>
+            <a class="btn btn-margin btn-success" href="{{ route('o_activity.create') }}">Create a new Activity</a>
         </div>
         @endauth
 
@@ -39,7 +39,7 @@
     <td>{{ $activity->activity }}</td>
     <td>{{ $activity->created_at}}</td>
     <td>
-       <a class="btn btn-primary" href="{{ route('o_activity.edit',$activity) }}">Edit</a>
+       <a class="btn btn-margin btn-success" href="{{ route('o_activity.edit',$activity) }}">Edit</a>
 
        <form action="{{ route('o_activity.destroy', $activity->id) }}" type="submit" method='post' >
              @csrf

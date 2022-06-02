@@ -13,7 +13,7 @@
 
         @auth
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('academics.create') }}">Create a new Academic Activity</a>
+            <a class="btn btn-margin btn-success" href="{{ route('academics.create') }}">Create a new Academic Activity</a>
         </div>
         @endauth
 
@@ -32,7 +32,9 @@
    <th>Name</th>
    <th>Requirement</th>
    <th>Date</th>
+   @auth
    <th width="280px">Action</th>
+   @endauth
  </tr>
  @foreach ($data as $key => $activity)
   <tr>
@@ -40,15 +42,16 @@
     <td>{{ $activity->name }}</td>
     <td>{{ $activity->requirements}}</td>
     <td>{{ $activity->dates}}</td>
+    @auth
     <td>
-       <a class="btn btn-primary" href="{{ route('academics.edit',$activity->id) }}">Edit</a>
-
+       <a class="btn btn-margin btn-success" href="{{ route('academics.edit',$activity->id) }}">Edit</a>
        <form action="{{ route('academics.destroy', $activity->id) }}" type="submit" method='post' >
              @csrf
              @method('delete')
            <button  type="submit" class="btn btn-danger ">Delete</button>
          </form>
     </td>
+    @endauth
   </tr>
  @endforeach
 </table>
