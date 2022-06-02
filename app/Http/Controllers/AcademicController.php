@@ -69,9 +69,10 @@ class AcademicController extends Controller
      * @param  \App\Models\Academic  $academic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Academic $academic)
+    public function edit($id)
     {
-        //
+      $academic = Academic::find($id);
+      return view('academics.edit',compact('academic'));
     }
 
     /**
@@ -81,9 +82,22 @@ class AcademicController extends Controller
      * @param  \App\Models\Academic  $academic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Academic $academic)
+    public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'type' => 'required',
+        'name' => 'required',
+        'requirements'=> 'required',
+        'dates'=> 'required'
+      ]);
+
+      $input = $request->all();
+
+      $academic = Academic::find($id);
+      $academic->update($input);
+    
+      return redirect()->route('academics.index')
+                    ->with('success','Academic program created successfully');
     }
 
     /**
@@ -92,8 +106,10 @@ class AcademicController extends Controller
      * @param  \App\Models\Academic  $academic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Academic $academic)
+    public function destroy($id)
     {
-        //
+      Academic::find($id)->delete();
+      return redirect()->route('academics.index')
+                      ->with('success','Activity deleted successfully');
     }
 }

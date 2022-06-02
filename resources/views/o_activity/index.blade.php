@@ -39,9 +39,13 @@
     <td>{{ $activity->activity }}</td>
     <td>{{ $activity->created_at}}</td>
     <td>
-       <a class="btn btn-info" href="{{ route('o_activity.show',$activity) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('o_activity.edit',$activity) }}">Edit</a>
 
+       <form action="{{ route('o_activity.destroy', $activity->id) }}" type="submit" method='post' >
+             @csrf
+             @method('delete')
+           <button  type="submit" class="btn btn-danger ">Delete</button>
+         </form>
     </td>
   </tr>
  @endforeach

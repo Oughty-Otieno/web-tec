@@ -71,9 +71,10 @@ class ProgrammeController extends Controller
      * @param  \App\Models\Programme  $programme
      * @return \Illuminate\Http\Response
      */
-    public function edit(Programme $programme)
+    public function edit($id)
     {
-        //
+      $program = Programme::find($id);
+      return view('programmes.edit',compact('program'));
     }
 
     /**
@@ -83,9 +84,21 @@ class ProgrammeController extends Controller
      * @param  \App\Models\Programme  $programme
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Programme $programme)
+    public function update(Request $request, Programme $programme, $id)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required',
+        'level'=> 'required',
+        'requirements'=> 'required'
+      ]);
+
+      $input = $request->all();
+
+      $program = Programme::find($id);
+      $program->update($input);
+
+      return redirect()->route('programs.index')
+                    ->with('success','Program edited successfully');
     }
 
     /**
@@ -94,8 +107,10 @@ class ProgrammeController extends Controller
      * @param  \App\Models\Programme  $programme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Programme $programme)
+    public function destroy($id)
     {
-        //
+      Programme::find($id)->delete();
+      return redirect()->route('programs.index')
+                      ->with('success','Activity deleted successfully');
     }
 }

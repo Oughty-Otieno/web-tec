@@ -44,13 +44,19 @@
       <div class="col-sm-10">
         <div class="card">
           <div class="card-body">
-    <p class="card-text">
-      {{$staff->title}}
-    </p>
+            <p class="card-text">
+              {{$staff->title}}
+            </p>
+            <a class="btn btn-primary" href="{{ route('staffs.edit',$staff->id) }}">Edit</a>
+            <form action="{{ route('staffs.destroy', $staff->id) }}" type="submit" method='post' >
+                  @csrf
+                  @method('delete')
+                <button  type="submit" class="btn btn-danger ">Delete</button>
+              </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
- </div>
-</div>
   </div>
 </div>
 @endforeach

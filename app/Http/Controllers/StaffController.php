@@ -78,9 +78,10 @@ class StaffController extends Controller
      * @param  \App\Models\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function edit(Staff $staff)
+    public function edit($id)
     {
-        //
+      $staff = Staff::find($id);
+      return view('staffs.edit',compact('staff'));
     }
 
     /**
@@ -90,9 +91,35 @@ class StaffController extends Controller
      * @param  \App\Models\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Staff $staff)
+    public function update(Request $request,$id)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required',
+        'title'=> 'required',
+      ]);
+
+      $photo = $request->file('photo');
+      if($photo !=null)
+      {
+        $extension = $photo->getClientOriginalExtension();
+        Storage::disk('public')->put($photo->getFilename().'.'.$extension,  File::get($photo));
+        $input = [
+           'name' => $request->get('name'),
+           'title' => $request->get('title'),
+           'photo' =>$photo->getFilename().'.'.$extension
+       ];
+      } else {
+        $input = [
+           'name' => $request->get('name'),
+           'title' => $request->get('title'),
+       ];
+      }
+
+     $staff = Staff::find($id);
+     $staff->update($input);
+
+      return redirect()->route('staffs.index')
+                    ->with('success','Staff created successfully');
     }
 
     /**
@@ -101,8 +128,10 @@ class StaffController extends Controller
      * @param  \App\Models\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff)
+    public function destroy($id)
     {
-        //
+      Staff::find($id)->delete();
+      return redirect()->route('staffs.index')
+                      ->with('success','Staff deleted successfully');
     }
 }

@@ -71,9 +71,10 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
-        //
+          $about = About::find($id);
+          return view('about_us.edit',compact('about'));
     }
 
     /**
@@ -83,9 +84,19 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'vision' => 'required',
+        'mission' => 'required',
+      ]);
+      $input = $request->all();
+      $about = About::find($id);
+      $about->update($input);
+
+
+      return redirect()->route('about_us.index')
+                      ->with('success','Details updated successfully');
     }
 
     /**

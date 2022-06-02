@@ -42,8 +42,13 @@
     <td>{{ $program->requirements}}</td>
     @auth
     <td>
-       <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
+       <a class="btn btn-primary" href="{{ route('programs.edit',$program->id) }}">Edit</a>
+
+       <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
+             @csrf
+             @method('delete')
+           <button  type="submit" class="btn btn-danger ">Delete</button>
+         </form>
     @endauth
     </td>
   </tr>
@@ -69,6 +74,12 @@
     <td>
        <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
+
+       <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
+             @csrf
+             @method('delete')
+           <button  type="submit" class="btn btn-danger ">Delete</button>
+         </form>
     @endauth
     </td>
   </tr>
@@ -94,6 +105,12 @@
     <td>
        <a class="btn btn-info" href="{{ route('programs.show',$program) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('programs.edit',$program) }}">Edit</a>
+
+       <form action="{{ route('programs.destroy', $program->id) }}" type="submit" method='post' >
+             @csrf
+             @method('delete')
+           <button  type="submit" class="btn btn-danger ">Delete</button>
+         </form>
     </td>
     @endauth
   </tr>

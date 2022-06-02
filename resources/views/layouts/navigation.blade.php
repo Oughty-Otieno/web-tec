@@ -27,6 +27,11 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('staffs.index') }}">Staff</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+        </li>
+
       </ul>
 
       <ul class="navbar-nav ms-auto">

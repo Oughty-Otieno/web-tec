@@ -35,6 +35,14 @@
     <p class="card-text">
       {{$department->description}}
       </p>
+
+      <a class="btn btn-primary" href="{{ route('departments.edit',$department->id) }}">Edit</a>
+
+      <form action="{{ route('departments.destroy', $department->id) }}" type="submit" method='post' >
+            @csrf
+            @method('delete')
+          <button  type="submit" class="btn btn-danger ">Delete</button>
+        </form>
   </div>
 </div>
 @endforeach

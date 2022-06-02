@@ -68,9 +68,10 @@ class DepartmentController extends Controller
      * @param  \App\Models\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function edit(Department $department)
+    public function edit($id)
     {
-        //
+      $department = Department::find($id);
+      return view('departments.edit',compact('department'));
     }
 
     /**
@@ -80,9 +81,20 @@ class DepartmentController extends Controller
      * @param  \App\Models\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department)
+    public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required',
+        'description'=> 'required',
+      ]);
+
+      $input = $request->all();
+
+      $department = Department::find($id);
+      $department->update($input);
+
+      return redirect()->route('departments.index')
+                    ->with('success','Department created successfully');
     }
 
     /**

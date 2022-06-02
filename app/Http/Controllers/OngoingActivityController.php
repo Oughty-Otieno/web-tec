@@ -66,9 +66,10 @@ class OngoingActivityController extends Controller
      * @param  \App\Models\OngoingActivity  $ongoingActivity
      * @return \Illuminate\Http\Response
      */
-    public function edit(OngoingActivity $ongoingActivity)
+    public function edit($id)
     {
-        //
+      $activity = OngoingActivity::find($id);
+      return view('o_activity.edit',compact('activity'));
     }
 
     /**
@@ -78,9 +79,20 @@ class OngoingActivityController extends Controller
      * @param  \App\Models\OngoingActivity  $ongoingActivity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OngoingActivity $ongoingActivity)
+    public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'activity' => 'required',
+      ]);
+
+      $input = $request->all();
+
+      $activity = OngoingActivity::find($id);
+      $activity->update($input);
+
+
+      return redirect()->route('o_activity.index')
+                    ->with('success','Activity editted successfully');
     }
 
     /**
@@ -89,8 +101,10 @@ class OngoingActivityController extends Controller
      * @param  \App\Models\OngoingActivity  $ongoingActivity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OngoingActivity $ongoingActivity)
+    public function destroy($id)
     {
-        //
+      OngoingActivity::find($id)->delete();
+      return redirect()->route('o_activity.index')
+                      ->with('success','Activity deleted successfully');
     }
 }

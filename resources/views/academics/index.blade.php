@@ -41,9 +41,13 @@
     <td>{{ $activity->requirements}}</td>
     <td>{{ $activity->dates}}</td>
     <td>
-       <a class="btn btn-info" href="{{ route('o_activity.show',$activity) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('o_activity.edit',$activity) }}">Edit</a>
+       <a class="btn btn-primary" href="{{ route('academics.edit',$activity->id) }}">Edit</a>
 
+       <form action="{{ route('academics.destroy', $activity->id) }}" type="submit" method='post' >
+             @csrf
+             @method('delete')
+           <button  type="submit" class="btn btn-danger ">Delete</button>
+         </form>
     </td>
   </tr>
  @endforeach
